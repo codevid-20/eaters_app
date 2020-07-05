@@ -34,4 +34,11 @@ class Api::EatersController < ApplicationController
     
     render 'show.json.jb'
   end
+
+  def destroy
+    @eater = Eater.find_by(id: params[:id])
+    @eater.destroy
+
+    render json: {message: "Eater successfully removed from MLE"}
+  end
 end
