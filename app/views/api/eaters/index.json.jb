@@ -1,0 +1,9 @@
+@eaters.map do |eater|
+  {
+    id: eater.id,
+    name: eater.name,
+    pr_hot_dogs: eater.pr_hot_dogs,
+    age: eater.age,
+    nationality: eater.nationality
+  }
+end
