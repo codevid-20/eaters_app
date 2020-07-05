@@ -20,4 +20,18 @@ class Api::EatersController < ApplicationController
     @eater = Eater.find_by(id: params[:id])
     render 'show.json.jb'
   end
+
+  def update
+    # find the eater
+    @eater = Eater.find_by(id: params[:id])
+    # update the eater
+    @eater.update(
+      name: params[:the_name],
+      pr_hot_dogs: params[:the_pr],
+      age: params[:the_age],
+      nationality: params[:the_nationality]
+    )
+    
+    render 'show.json.jb'
+  end
 end
