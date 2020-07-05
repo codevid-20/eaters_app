@@ -15,4 +15,9 @@ class Api::EatersController < ApplicationController
     
     render 'show.json.jb'
   end
+
+  def show
+    @eater = Eater.find_by(id: params[:id])
+    render 'show.json.jb'
+  end
 end
